@@ -446,7 +446,7 @@ def display_company_recommendations(company_analysis):
                     <p><strong>🎯 Uyum:</strong> %{match:.1f}</p>
                 </div>
                 <div style="text-align: right;">
-                    <p style="color: {status_color}; font-weight: bold;">{status_text}</p>
+                    <p style="renk: {status_color}; font-weight: bold;">{status_text}</p>
                 </div>
             </div>
         </div>
@@ -713,7 +713,7 @@ def main():
     # Footer
     st.markdown("---")
     st.markdown("""
-    <div style="text-align: center; color: #666; padding: 1rem;">
+    <div style="text-align: center; renk: #666; padding: 1rem;">
         <p>🎯 Kariyer Yolu Öneri Sistemi | AI Destekli Kariyer Analizi</p>
         <p>📊 Verileriniz güvenli ve gizlidir | 🔒 GDPR Uyumlu</p>
         <p>🏢 {company_count} şirket ile şirket önerileri | 📈 Gerçek zamanlı analiz</p>
