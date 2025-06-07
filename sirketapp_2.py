@@ -380,13 +380,13 @@ def create_form_info_page():
     st.write("### 📋 Form Doldurma Adımları:")
     st.write("""
     1. **Google Forms Linki**: Size verilen Google Forms linkine gidin
-    2. **Email Adresinizi Girin**: Formda aynı email adresini kullanın
+    2. **E-posta Adresinizi Girin**: Formda aynı e-posta adresini kullanın
     3. **Profilleri Değerlendirin**: 16 farklı kariyer profilini değerlendirin
     4. **Formu Gönderin**: Tüm soruları yanıtladıktan sonra formu gönderin
-    5. **Sonuçları Görün**: Bu sayfaya geri dönüp email adresinizle giriş yapın
+    5. **Sonuçları Görün**: Bu sayfaya geri dönüp e-posta adresinizle giriş yapın
     """)
     
-    st.info("💡 **İpucu**: Formu doldurduktan sonra bu sayfayı yenileyin ve email adresinizi tekrar girin.")
+    st.info("💡 **İpucu**: Formu doldurduktan sonra bu sayfayı yenileyin ve e-posta adresinizi tekrar girin.")
     
     if st.button("🔄 Sayfayı Yenile"):
         st.rerun()
@@ -511,8 +511,8 @@ def display_company_recommendations(company_analysis):
             x=regret_values,
             y=company_names,
             orientation='h',
-            title="Regret Oranları (%)",
-            labels={'x': 'Regret (%)', 'y': 'Şirket'},
+            title="Pişmanlık Oranları (%)",
+            labels={'x': 'Pişmanlık (%)', 'y': 'Şirket'},
             color=regret_values,
             color_continuous_scale='RdYlGn_r'
         )
@@ -523,14 +523,7 @@ def display_results(analysis_results):
     """Sonuçları görsel olarak göster"""
     results = analysis_results
     
-    
-    # Service sector check and company recommendations
-    if results['is_service_sector'] and results['company_analysis']:
-        display_company_recommendations(results['company_analysis'])
-        st.markdown("---")
-    elif results['is_service_sector']:
-        st.info("🏢 Hizmet sektörü tespit edildi! Şirket önerileri hazırlanıyor...")
-    
+ 
     # Top 3 career recommendations
     st.header("🏆 En Uygun 3 Kariyer Önerisi")
     
@@ -546,10 +539,20 @@ def display_results(analysis_results):
         <div class="career-card">
             <h3>{medals[i]} {career_name}</h3>
             <p><strong>Puan:</strong> {score:.2f}</p>
-            <p><strong>Regret:</strong> %{regret:.1f}</p>
+            <p><strong>Pişmanlık:</strong> %{regret:.1f}</p>
         </div>
         """, unsafe_allow_html=True)
-    
+  
+    # Service sector check and company recommendations
+    if results['is_service_sector'] and results['company_analysis']:
+        st.success(
+            "🚀 Önerilen kariyer yolunuz hizmet sektöründe çalışmak. Bu bağlamda aşağıdaki şirketler size uygun olabilir:"
+        )
+        display_company_recommendations(results['company_analysis'])
+        st.markdown("---")
+    elif results['is_service_sector']:
+        st.info("🏢 Şirket önerileri hazırlanıyor...")
+  
     # Career scores visualization
     st.header("📈 Tüm Kariyer Yolları Karşılaştırması")
     
@@ -570,56 +573,18 @@ def display_results(analysis_results):
     
     # Top criteria analysis
     st.header("🎯 En Önemli Kriterler")
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        # Create criteria importance chart
-        factor_names = []
-        factor_values = []
-        
-        variable_names_list = [
-            "Stres Düzeyi", "Kendini Geliştirme", "Şirket Kültürü", 
-            "Yan Haklar", "Şirketin Uluslararası Olması", "Ekip Bağları",
-            "Yurtdışı İmkanları", "Maaş", "Şirketin Konumu", "Yükselme Potansiyeli"
-        ]
-        
-        for i, (idx, coef) in enumerate(results['top_factors']):
-            factor_name = variable_names_list[idx]
-            factor_names.append(factor_name)
-            factor_values.append(coef)
-        
-        fig2 = px.bar(
-            x=factor_values,
-            y=factor_names,
-            orientation='h',
-            title="En Önemli 5 Kriter",
-            labels={'x': 'Katsayı', 'y': 'Kriter'},
-            color=factor_values,
-            color_continuous_scale='RdYlBu'
-        )
-        st.plotly_chart(fig2, use_container_width=True)
-    
-    with col2:
-        st.subheader("🔍 Kriter Detayları")
-        variable_names_list = [
-            "Stres Düzeyi", "Kendini Geliştirme", "Şirket Kültürü", 
-            "Yan Haklar", "Şirketin Uluslararası Olması", "Ekip Bağları",
-            "Yurtdışı İmkanları", "Maaş", "Şirketin Konumu", "Yükselme Potansiyeli"
-        ]
-        
-        for i, (idx, coef) in enumerate(results['top_factors']):
-            factor_name = variable_names_list[idx]
-            direction = "↗️ Pozitif Etki" if coef > 0 else "↘️ Negatif Etki"
-            rank_emoji = ["🥇", "🥈", "🥉", "🎯", "🎯"][i]
-            
-            st.markdown(f"""
-            <div class="metric-card">
-                <h4>{rank_emoji} {factor_name}</h4>
-                <p><strong>Katsayı:</strong> {coef:.3f}</p>
-                <p><strong>Etki:</strong> {direction}</p>
-            </div>
-            """, unsafe_allow_html=True)
+
+    variable_names_list = [
+        "Stres Düzeyi", "Kendini Geliştirme", "Şirket Kültürü",
+        "Yan Haklar", "Şirketin Uluslararası Olması", "Ekip Bağları",
+        "Yurtdışı İmkanları", "Maaş", "Şirketin Konumu", "Yükselme Potansiyeli"
+    ]
+
+    factor_names = [variable_names_list[idx] for idx, _ in results['top_factors']]
+
+    for i, factor_name in enumerate(factor_names):
+        rank_emoji = ["🥇", "🥈", "🥉", "🎯", "🎯"][i]
+        st.markdown(f"- {rank_emoji} {factor_name}")
     
     # Model statistics
     st.header("📊 Model İstatistikleri")
@@ -640,7 +605,7 @@ def display_results(analysis_results):
 
 def main():
     st.title("🎯 Kariyer Yolu Öneri Sistemi")
-    st.write("Size en uygun kariyer yolunu bulmak için email adresinizi girin.")
+    st.write("Size en uygun kariyer yolunu bulmak için e-posta adresinizi girin.")
     
     # Google Sheets URL
     SHEETS_URL = "https://docs.google.com/spreadsheets/d/17gldbSpMdcLVZApDUTEKWX0pa01B5Dfc8caF7ZUMRHg/edit?usp=sharing"
@@ -655,12 +620,12 @@ def main():
     # Email girişi
     st.markdown("""
     <div style="background: linear-gradient(135deg, #667eea, #764ba2); padding: 2rem; border-radius: 15px; color: white; text-align: center; margin: 2rem 0;">
-        <h2>📧 Email Adresinizi Girin</h2>
-        <p>Kariyer analizi sonuçlarınızı görmek için formu doldururken kullandığınız email adresini girin.</p>
+        <h2>📧 E-posta Adresinizi Girin</h2>
+        <p>Kariyer analizi sonuçlarınızı görmek için formu doldururken kullandığınız e-posta adresini girin.</p>
     </div>
     """, unsafe_allow_html=True)
     
-    email = st.text_input("📧 Email Adresiniz:", placeholder="ornek@email.com")
+    email = st.text_input("📧 E-posta Adresiniz:", placeholder="ornek@email.com")
     
     if email and '@' in email:
         if st.button("🔍 Sonuçları Getir", type="primary"):
@@ -684,13 +649,13 @@ def main():
                         display_results(results)
                         
                     else:
-                        st.warning("⚠️ Bu email adresi için tamamlanmış form bulunamadı.")
+                        st.warning("⚠️ Bu e-posta adresi için tamamlanmış form bulunamadı.")
                         create_form_info_page()
                 else:
                     st.error("❌ Google Sheets verilerine erişilemedi. Lütfen daha sonra tekrar deneyin.")
     
     elif email and '@' not in email:
-        st.error("❌ Lütfen geçerli bir email adresi girin.")
+        st.error("❌ Lütfen geçerli bir e-posta adresi girin.")
     
     # Bilgi bölümü
     if not email:
@@ -698,14 +663,14 @@ def main():
         ---
         ### 📋 Nasıl Çalışır?
         
-        1. **📧 Email Girin**: Formu doldururken kullandığınız email adresini girin
+        1. **📧 E-posta Girin**: Formu doldururken kullandığınız e-posta adresini girin
         2. **🔍 Kontrol**: Sistem Google Sheets'te verilerinizi arar
         3. **📊 Analiz**: Verileriniz bulunursa otomatik analiz yapılır
         4. **🎯 Sonuç**: Size en uygun kariyer yolları önerilir
         5. **🏢 Şirket Önerileri**: Hizmet sektörü önerildiyse en iyi şirketler gösterilir
         
         ### ❓ Sorun Yaşıyor musunuz?
-        - Email adresinizi doğru yazdığınızdan emin olun
+        - E-posta adresinizi doğru yazdığınızdan emin olun
         - Formu tamamen doldurduğunuzdan emin olun
         - Birkaç dakika bekleyip tekrar deneyin
         """)
