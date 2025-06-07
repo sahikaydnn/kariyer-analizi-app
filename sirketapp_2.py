@@ -443,7 +443,7 @@ def display_company_recommendations(company_analysis):
             <div style="display: flex; justify-content: space-between; align-items: center;">
                 <div>
                     <p><strong>📊 Puan:</strong> {company['score']:.2f}</p>
-                    <p><strong>🎯 Uyum:</strong> %{match:.1f}</p>
+                    <p><strong>🎯 Pişmanlık:</strong> %{regret:.1f}</p>
                 </div>
                 <div style="text-align: right;">
                     <p style="renk: {status_color}; font-weight: bold;">{status_text}</p>
@@ -464,7 +464,7 @@ def display_company_recommendations(company_analysis):
     
     with col2:
         st.metric(
-            "🏆 En İyi Gerçek Şirket", 
+            "🏆 En Uygun Şirket", 
             f"{company_analysis['top_5'][0]['score']:.2f}",
             delta=f"{company_analysis['top_5'][0]['score'] - company_analysis['ideal_score']:.2f}",
             help=f"En yüksek puanlı şirket: {company_analysis['top_5'][0]['name']}"
