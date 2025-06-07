@@ -1,0 +1,1 @@
+# kariyer-analizi-app
