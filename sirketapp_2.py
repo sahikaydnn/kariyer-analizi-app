@@ -22,6 +22,38 @@ st.markdown("""
     body, .stApp {
         background-color: #f4f1fa;
     }
+    /* ——— Dark Mode Desteği ——— */
+    @media (prefers-color-scheme: dark) {
+    body, .stApp {
+    background-color: #1e1e1e !important;
+    }
+    h1, h2, h3, h4, .main-header {
+    color: #e0e0e0 !important;
+    }
+    /* Alert / Card arkaplanlarının transparan olup border’lı görünmesi */
+    .service-sector-alert,
+    .career-card,
+    .company-card {
+    background: transparent !important;
+    border: 1px solid #444 !important;
+    }
+    /* Metric kutuları koyu arka plan + mor border */
+    .stMetric {
+    background-color: #2c2c2c !important;
+    border: 2px solid #613cb0 !important;
+    color: #e0e0e0 !important;
+    }
+    /* Butonlar mor tonunda */
+    .stButton > button {
+    background-color: #613cb0 !important;
+    color: #ffffff !important;
+    }
+    /* Expander başlığı koyu modda da okunur */
+    [data-testid="stExpander"] > details > summary {
+    background-color: #2c2c2c !important;
+    color: #e0e0e0 !important;
+    }
+    }
     .main-header {
         font-size: 3rem;
         color: #613cb0;
