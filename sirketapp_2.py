@@ -527,15 +527,21 @@ def display_company_recommendations(company_analysis):
     st.subheader("📈 Şirket Puanları Karşılaştırması")
     
     # Puan grafiği için yüksekten düşüğe sırala
-    sorted_by_score = sorted(company_analysis['top_5'], key=lambda x: x['score'], reverse=True)
+    sorted_by_score = sorted(
+        company_analysis['top_5'],
+        key=lambda x: x['score'],
+        reverse=True
+    )
     company_names_score = [comp['name'] for comp in sorted_by_score]
     company_scores = [comp['score'] for comp in sorted_by_score]
 
     # Pişmanlık grafiği için düşükten yükseğe sırala
-    sorted_by_regret = sorted(company_analysis['top_5'], key=lambda x: x.get('regret_percent', 0))
+    sorted_by_regret = sorted(
+        company_analysis['top_5'],
+        key=lambda x: x.get('regret_percent', 0)
+    )
     company_names_regret = [comp['name'] for comp in sorted_by_regret]
     regret_values = [comp.get('regret_percent', 0) for comp in sorted_by_regret]
-
 
     # İki grafik yan yana
     col1, col2 = st.columns(2)
@@ -556,7 +562,11 @@ def display_company_recommendations(company_analysis):
             line_color="red",
             annotation_text="İdeal Puan"
         )
-        fig_scores.update_layout(height=400, showlegend=False)
+        fig_scores.update_layout(
+            height=400,
+            showlegend=False,
+            yaxis=dict(categoryorder='array', categoryarray=company_names_score)
+        )
         st.plotly_chart(fig_scores, use_container_width=True)
     
     with col2:
@@ -569,7 +579,11 @@ def display_company_recommendations(company_analysis):
             color=regret_values,
             color_continuous_scale='RdYlGn_r'
         )
-        fig_regret.update_layout(height=400, showlegend=False)
+        fig_regret.update_layout(
+            height=400,
+            showlegend=False,
+            yaxis=dict(categoryorder='array', categoryarray=company_names_regret)
+        )
         st.plotly_chart(fig_regret, use_container_width=True)
 
 def display_results(analysis_results):
