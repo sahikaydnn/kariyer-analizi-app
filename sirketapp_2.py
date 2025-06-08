@@ -785,13 +785,15 @@ def main():
         cols = st.columns(3)
         for i, (company_name, _) in enumerate(companies):
             with cols[i % 3]:
-                st.write(f"• {company_name}")
+                st.markdown(
+                    f"<span style='color:#dfd2fa;'>• {company_name}</span>",
+                    unsafe_allow_html=True)
     
     # Footer
     st.markdown("---")
     st.markdown("""
     <div style="text-align: center; renk: #666; padding: 1rem;">
-        <p>Kariyer Yolu Öneri Sistemi | Tercih ve Yetkinlik Bazlı Öneriler</p>
+        <p>Kariyer Yolu Öneri Sistemi | Tercih Bazlı Öneriler</p>
         <p>Verileriniz güvenli ve gizlidir | GDPR Uyumlu</p>
         <p>{company_count} şirket ile şirket önerileri | Gerçek zamanlı analiz</p>
     </div>
