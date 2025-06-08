@@ -423,7 +423,7 @@ def display_company_recommendations(company_analysis):
 
     <div class="service-sector-alert">
         <h2>🏢 HİZMET SEKTÖRÜ KARİYERİNİZE BAŞLAMANIZ İÇİN GÜZEL BİR NOKTA!</h2>
-        <p style="font-size: 1.1rem; margin-bottom: 0;">Size özel şirket önerileri hazırlandı</p>
+        <p style="font-size: 1.1rem; margin-bottom: 0;">Size özel şirket önerileri hazırlandı.</p>
     </div>
     """, unsafe_allow_html=True)
     
@@ -627,7 +627,7 @@ def main():
     
     # Email girişi
     st.markdown("""
-    <div style="background: linear-gradient(135deg, #613cb0 0%, #a87de0 50%, #d7c6f5 100%); padding: 2rem; border-radius: 15px; color: white; text-align: center; margin: 2rem 0;">
+    <div style="background: linear-gradient(135deg, #613cb0 0%, #a87de0 50%, #764ba2 100%); padding: 2rem; border-radius: 15px; color: white; text-align: center; margin: 2rem 0;">
         <h2>📧 E-posta Adresinizi Girin</h2>
         <p>Kariyer analizi sonuçlarınızı görmek için formu doldururken kullandığınız e-posta adresini girin.</p>
     </div>
