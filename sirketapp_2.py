@@ -36,8 +36,6 @@ st.markdown("""
     .company-card {
     background: transparent !important;
     border: 1px solid #444 !important;
-    /* Mor metin rengi eklendi */
-    color: #613cb0 !important;
     }
     /* Metric kutuları koyu arka plan + mor border */
     .stMetric {
