@@ -785,9 +785,7 @@ def main():
         cols = st.columns(3)
         for i, (company_name, _) in enumerate(companies):
             with cols[i % 3]:
-                st.markdown(
-                    f"<span style='color:#dfd2fa;'>• {company_name}</span>",
-                    unsafe_allow_html=True)
+                st.write(f"• {company_name}")
     
     # Footer
     st.markdown("---")
