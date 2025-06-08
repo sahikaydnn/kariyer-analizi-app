@@ -48,7 +48,7 @@ st.markdown("""
         border-left: 4px solid #007bff;
     }
     .service-sector-alert {
-        background: linear-gradient(135deg, #613cb0 0%, #a87de0 50%, #efebf7 100%);
+        background: linear-gradient(135deg, #613cb0 0%, #a87de0 50%, #d7c6f5 100%);
         padding: 1.5rem;
         border-radius: 15px;
         margin: 1rem 0;
@@ -418,7 +418,7 @@ def display_company_recommendations(company_analysis):
       color: #ffffff !important;
     }
     .service-sector-alert p {
-      color: #ffffff !important;
+      color: #261846 !important;
     }
     </style>
 
