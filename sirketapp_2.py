@@ -16,46 +16,82 @@ st.set_page_config(
     page_title="Kariyer Yolu Öneri Sistemi",
     layout="wide"
 )
-
-# Custom CSS for better styling
+# Custom CSS for full purple theme
 st.markdown("""
 <style>
+    body, .stApp {
+        background-color: #f4f1fa;
+    }
     .main-header {
         font-size: 3rem;
-        color: #3a2469;
+        color: #613cb0;
         text-align: center;
         margin-bottom: 2rem;
     }
-    .career-card {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 1.5rem;
-        border-radius: 10px;
-        margin: 1rem 0;
-        color: white;
-    }
-    .company-card {
-        background: linear-gradient(135deg, #35688c 0%, #20c997 100%);
-        padding: 1rem;
-        border-radius: 8px;
-        margin: 0.5rem 0;
-        color: white;
-    }
-    .metric-card {
-        background: #f8f9fa;
-        padding: 1rem;
-        border-radius: 8px;
-        border-left: 4px solid #007bff;
+    h1, h2, h3, h4 {
+        color: #613cb0;
     }
     .service-sector-alert {
-        background: linear-gradient(135deg, #613cb0 0%, #a87de0 50%, #764ba2 100%);
+        background: linear-gradient(135deg, #613cb0 0%, #a87de0 50%, #d7c6f5 100%);
         padding: 1.5rem;
         border-radius: 15px;
         margin: 1rem 0;
         color: #ffffff;
         text-align: center;
     }
+    .service-sector-alert h2, .service-sector-alert p {
+        color: #ffffff !important;
+    }
+    .career-card {
+        background: linear-gradient(135deg, #613cb0 0%, #a87de0 100%);
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 1rem 0;
+        color: white;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .company-card {
+        background: linear-gradient(135deg, #613cb0 0%, #a87de0 100%);
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 0.5rem 0;
+        color: white;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .stMetric {
+        background: #ffffff;
+        padding: 1rem;
+        border: 2px solid #613cb0;
+        border-radius: 8px;
+        color: #613cb0 !important;
+    }
+    .form-header {
+        background: #613cb0;
+        padding: 2rem;
+        border-radius: 15px;
+        color: white;
+        text-align: center;
+        margin: 2rem 0;
+    }
+    .stButton>button {
+        background-color: #613cb0;
+        color: white;
+        border-radius: 8px;
+        padding: 0.75rem 2rem;
+        font-weight: bold;
+        border: none;
+    }
+    .stButton>button:hover {
+        background-color: #4b2d87;
+        color: white;
+    }
+    .stAlert-success {
+        background-color: #d7c6f5 !important;
+        color: #4b2d87 !important;
+    }
 </style>
 """, unsafe_allow_html=True)
+
 
 class CareerAnalysisApp:
     def __init__(self):
