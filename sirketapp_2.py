@@ -777,6 +777,18 @@ def main():
     
     # Şirket listesi gösterimi
     st.markdown("---")
+    # Expander başlığının arkaplan rengini değiştiren CSS
+    st.markdown("""
+    <style>
+    [data-testid="stExpander"] > details > summary {
+    background-color: #dbd8e1 !important;
+    border-radius: 8px;
+    color: #152938;}
+    [data-testid="stExpander"] > details > summary:hover {
+    background-color: #dfd2fa !important;}
+    </style>
+    """, unsafe_allow_html=True)
+
     with st.expander("🏢 Mevcut Şirket Listesi"):
         st.write("**Analiz edilen şirketler:**")
         companies = st.session_state.analyzer.company_data
