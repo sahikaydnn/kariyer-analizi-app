@@ -414,7 +414,7 @@ def display_company_recommendations(company_analysis):
     
     st.markdown("""
     <div class="service-sector-alert">
-        <h2>🏢 HİZMET SEKTÖRÜ KARİYERİNİZE BAŞLAMANIZ İÇİN GÜZEL BİR NOKTA!</h2>
+        <h2 style="color: #537F9D;">🏢 HİZMET SEKTÖRÜ KARİYERİNİZE BAŞLAMANIZ İÇİN GÜZEL BİR NOKTA!</h2>
         <p style="font-size: 1.1rem; margin-bottom: 0;">Size özel şirket önerileri hazırlandı</p>
     </div>
     """, unsafe_allow_html=True)
