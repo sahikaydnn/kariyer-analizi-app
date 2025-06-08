@@ -40,7 +40,7 @@ st.markdown("""
         text-align: center;
     }
     .service-sector-alert h2, .service-sector-alert p {
-        color: #ffffff !important;
+        color: #301e58; !important;
     }
     .career-card {
         background: linear-gradient(135deg, #613cb0 0%, #a87de0 100%);
