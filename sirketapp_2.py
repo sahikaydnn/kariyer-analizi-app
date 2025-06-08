@@ -628,7 +628,7 @@ def main():
     
     # Email girişi
     st.markdown("""
-    <div style="background: linear-gradient((
+    <div style="background: linear-gradient(
     135deg,
     #613cb0 0%,
     #a87de0 50%,
