@@ -14,7 +14,6 @@ warnings.filterwarnings('ignore')
 # Set page config
 st.set_page_config(
     page_title="Kariyer Yolu Öneri Sistemi",
-    page_icon="🎯",
     layout="wide"
 )
 
@@ -23,7 +22,7 @@ st.markdown("""
 <style>
     .main-header {
         font-size: 3rem;
-        color: #261846;
+        color: #3a2469;
         text-align: center;
         margin-bottom: 2rem;
     }
@@ -615,7 +614,7 @@ def display_results(analysis_results):
         st.metric("F İstatistiği", f"{results['model_results']['f_statistic']:.2f}")
 
 def main():
-    st.title("🎯 Kariyer Yolu Öneri Sistemi")
+    st.title("Kariyer Yolu Öneri Sistemi")
     st.write("Size en uygun kariyer yolunu bulmak için e-posta adresinizi girin.")
     
     # Google Sheets URL
@@ -725,7 +724,7 @@ def main():
     st.markdown("---")
     st.markdown("""
     <div style="text-align: center; renk: #666; padding: 1rem;">
-        <p>🎯 Kariyer Yolu Öneri Sistemi | AI Destekli Kariyer Analizi</p>
+        <p>🎯 Kariyer Yolu Öneri Sistemi | Tercih ve Yetkinlik Bazlı Öneriler</p>
         <p>📊 Verileriniz güvenli ve gizlidir | 🔒 GDPR Uyumlu</p>
         <p>🏢 {company_count} şirket ile şirket önerileri | 📈 Gerçek zamanlı analiz</p>
     </div>
