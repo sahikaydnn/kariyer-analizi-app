@@ -48,13 +48,12 @@ st.markdown("""
         border-left: 4px solid #007bff;
     }
     .service-sector-alert {
-        background: linear-gradient(135deg, #613cb0 0%, #a87de0 50%, #d7c6f5 100%);
+        background: linear-gradient(135deg, #613cb0 0%, #a87de0 50%, #764ba2 100%);
         padding: 1.5rem;
         border-radius: 15px;
         margin: 1rem 0;
         color: #ffffff;
         text-align: center;
-        border: 2px solid #613cb0;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -418,7 +417,7 @@ def display_company_recommendations(company_analysis):
       color: #ffffff !important;
     }
     .service-sector-alert p {
-      color: #261846 !important;
+      color: #ffffff !important;
     }
     </style>
 
