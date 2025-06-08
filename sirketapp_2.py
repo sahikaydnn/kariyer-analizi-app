@@ -415,10 +415,10 @@ def display_company_recommendations(company_analysis):
     st.markdown("""
     <style>
     .service-sector-alert h2 {
-      color: #613cb0 !important;
+      color: #fffff !important;
     }
     .service-sector-alert p {
-      color: #555555 !important;
+      color: #fffff !important;
     }
     </style>
 
