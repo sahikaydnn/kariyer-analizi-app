@@ -791,9 +791,9 @@ def main():
     st.markdown("---")
     st.markdown("""
     <div style="text-align: center; renk: #666; padding: 1rem;">
-        <p>🎯 Kariyer Yolu Öneri Sistemi | Tercih ve Yetkinlik Bazlı Öneriler</p>
-        <p>📊 Verileriniz güvenli ve gizlidir | 🔒 GDPR Uyumlu</p>
-        <p>🏢 {company_count} şirket ile şirket önerileri | 📈 Gerçek zamanlı analiz</p>
+        <p>Kariyer Yolu Öneri Sistemi | Tercih ve Yetkinlik Bazlı Öneriler</p>
+        <p>Verileriniz güvenli ve gizlidir | GDPR Uyumlu</p>
+        <p>{company_count} şirket ile şirket önerileri | Gerçek zamanlı analiz</p>
     </div>
     """.format(company_count=len(st.session_state.analyzer.company_data) if 'analyzer' in st.session_state else 34), unsafe_allow_html=True)
 
