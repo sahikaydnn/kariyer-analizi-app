@@ -526,10 +526,13 @@ def display_company_recommendations(company_analysis):
     # Company scores visualization
     st.subheader("📈 Şirket Puanları Karşılaştırması")
     
-    company_names = [comp['name'] for comp in company_analysis['top_5']]
-    company_scores = [comp['score'] for comp in company_analysis['top_5']]
-    regret_values = [comp.get('regret_percent', 0) for comp in company_analysis['top_5']]
-    
+    # Şirketleri puana göre büyükten küçüğe sırala
+    sorted_by_score = sorted(company_analysis['top_5'], key=lambda x: x['score'], reverse=True)
+
+    company_names = [comp['name'] for comp in sorted_by_score]
+    company_scores = [comp['score'] for comp in sorted_by_score]
+    regret_values = [comp.get('regret_percent', 0) for comp in sorted_by_score]
+
     # İki grafik yan yana
     col1, col2 = st.columns(2)
     
