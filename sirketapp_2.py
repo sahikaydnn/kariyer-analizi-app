@@ -371,7 +371,7 @@ def convert_scores_to_analysis_data(profile_scores):
 def create_form_info_page():
     """Form doldurma bilgi sayfası"""
     st.markdown("""
-    <div style="background: linear-gradient(135deg, #ff6b6b, #ffa500); padding: 2rem; border-radius: 15px; color: white; text-align: center; margin: 2rem 0;">
+    <div style="background: linear-gradient(135deg, #613cb0 0%, #a87de0 50%, #d7c6f5 100%); padding: 2rem; border-radius: 15px; text-align: center; margin: 2rem 0;">
         <h2>📝 Form Doldurma Gerekli</h2>
         <p style="font-size: 1.2rem;">Kariyer analizinizi görebilmek için önce formu doldurmanız gerekiyor.</p>
     </div>
