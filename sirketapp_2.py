@@ -48,7 +48,7 @@ st.markdown("""
         border-left: 4px solid #007bff;
     }
     .service-sector-alert {
-        background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+        background: linear-gradient(135deg, #a9c6db 0%, #cde7fa 50%, #cde7fa 100%);
         padding: 1.5rem;
         border-radius: 15px;
         margin: 1rem 0;
