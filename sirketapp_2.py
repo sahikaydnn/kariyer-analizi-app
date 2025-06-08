@@ -563,11 +563,13 @@ def display_company_recommendations(company_analysis):
             annotation_text="İdeal Puan"
         )
         fig_scores.update_layout(
-            'autorange':'reversed',
             height=400,
             showlegend=False,
-            yaxis=dict(categoryorder='array', categoryarray=company_names_score)
-        )
+            yaxis=dict(
+                autorange='reversed',
+                categoryorder='array',
+                categoryarray=company_names_score
+            ))
         st.plotly_chart(fig_scores, use_container_width=True)
     
     with col2:
@@ -581,10 +583,12 @@ def display_company_recommendations(company_analysis):
             color_continuous_scale='RdYlGn_r'
         )
         fig_regret.update_layout(
-            'autorange':'reversed',
             height=400,
             showlegend=False,
-            yaxis=dict(categoryorder='array', categoryarray=company_names_regret)
+            yaxis=dict(
+                autorange='reversed',
+                categoryorder='array',
+                categoryarray=company_names_regret)
         )
         st.plotly_chart(fig_regret, use_container_width=True)
 
