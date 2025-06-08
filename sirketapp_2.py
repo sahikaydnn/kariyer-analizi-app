@@ -669,7 +669,7 @@ def display_results(analysis_results):
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
-        st.metric("R² Değeri", f"{results['model_results']['r2']:.4f}")
+        st.metric("R² Değeri", f" Analizimizin içerdiği kriterler sizin kariyer kararlarınızın %{results['model_results']['r2']:.4f}'ını kapsıyor.")
     
     with col2:
         st.metric("Adjusted R²", f"{results['model_results']['adj_r2']:.4f}")
@@ -768,7 +768,7 @@ def main():
     st.subheader("🎮 Demo Modu")
     st.write("Sistemi test etmek için örnek verilerle demo analizi yapabilirsiniz:")
     
-    if st.button("⚡ Demo Analizi Çalıştır"):
+    if st.button("Demo Analizi Çalıştır"):
         with st.spinner("Demo analizi yapılıyor..."):
             demo_data = create_quick_demo_data()
             results = st.session_state.analyzer.analyze(demo_data, "Demo Kullanıcı")
@@ -777,7 +777,7 @@ def main():
     
     # Şirket listesi gösterimi
     st.markdown("---")
-    with st.expander("🏢 Mevcut Şirket Listesi"):
+    with st.expander("Mevcut Şirket Listesi"):
         st.write("**Analiz edilen şirketler:**")
         companies = st.session_state.analyzer.company_data
         
