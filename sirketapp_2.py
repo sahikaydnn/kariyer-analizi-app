@@ -526,12 +526,16 @@ def display_company_recommendations(company_analysis):
     # Company scores visualization
     st.subheader("📈 Şirket Puanları Karşılaştırması")
     
-    # Şirketleri puana göre büyükten küçüğe sırala
+    # Puan grafiği için yüksekten düşüğe sırala
     sorted_by_score = sorted(company_analysis['top_5'], key=lambda x: x['score'], reverse=True)
-
-    company_names = [comp['name'] for comp in sorted_by_score]
+    company_names_score = [comp['name'] for comp in sorted_by_score]
     company_scores = [comp['score'] for comp in sorted_by_score]
-    regret_values = [comp.get('regret_percent', 0) for comp in sorted_by_score]
+
+    # Pişmanlık grafiği için düşükten yükseğe sırala
+    sorted_by_regret = sorted(company_analysis['top_5'], key=lambda x: x.get('regret_percent', 0))
+    company_names_regret = [comp['name'] for comp in sorted_by_regret]
+    regret_values = [comp.get('regret_percent', 0) for comp in sorted_by_regret]
+
 
     # İki grafik yan yana
     col1, col2 = st.columns(2)
@@ -539,7 +543,7 @@ def display_company_recommendations(company_analysis):
     with col1:
         fig_scores = px.bar(
             x=company_scores,
-            y=company_names,
+            y=company_names_score,
             orientation='h',
             title="En Uygun 5 Şirket Puanları",
             labels={'x': 'Puan', 'y': 'Şirket'},
@@ -558,7 +562,7 @@ def display_company_recommendations(company_analysis):
     with col2:
         fig_regret = px.bar(
             x=regret_values,
-            y=company_names,
+           y=company_names_regret,
             orientation='h',
             title="Pişmanlık Oranları (%)",
             labels={'x': 'Pişmanlık (%)', 'y': 'Şirket'},
