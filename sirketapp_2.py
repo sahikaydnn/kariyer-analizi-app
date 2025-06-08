@@ -31,12 +31,14 @@ st.markdown("""
     color: #e0e0e0 !important;
     }
     /* Alert / Card arkaplanlarının transparan olup border’lı görünmesi */
-    .service-sector-alert,
-    .career-card,
-    .company-card {
-    background: transparent !important;
-    border: 1px solid #444 !important;
-    }
+      .service-sector-alert,
+      .career-card,
+      .company-card {
+        background: transparent !important;
+        border: 1px solid #444 !important;
+        /* Alt metinler dahil tüm metni beyaz yap */
+        color: #ffffff !important;
+      }
     /* Metric kutuları koyu arka plan + mor border */
     .stMetric {
     background-color: #2c2c2c !important;
