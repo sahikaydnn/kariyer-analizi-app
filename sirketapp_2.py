@@ -563,6 +563,7 @@ def display_company_recommendations(company_analysis):
             annotation_text="İdeal Puan"
         )
         fig_scores.update_layout(
+            'autorange':'reversed',
             height=400,
             showlegend=False,
             yaxis=dict(categoryorder='array', categoryarray=company_names_score)
@@ -580,6 +581,7 @@ def display_company_recommendations(company_analysis):
             color_continuous_scale='RdYlGn_r'
         )
         fig_regret.update_layout(
+            'autorange':'reversed',
             height=400,
             showlegend=False,
             yaxis=dict(categoryorder='array', categoryarray=company_names_regret)
