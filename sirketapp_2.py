@@ -669,16 +669,36 @@ def display_results(analysis_results):
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
-        st.metric("R² Değeri", f"{results['model_results']['r2']:.4f}")
+        st.metric(
+            "R² Değeri",
+            f"{results['model_results']['r2']:.4f}",
+            help=(f"Kararınızın %{results['model_results']['r2']*100:.2f}’si "
+                  "analizdeki kriterlere dayanıyor."))
     
     with col2:
-        st.metric("Adjusted R²", f"{results['model_results']['adj_r2']:.4f}")
+        st.metric(
+            "Adjusted R²",
+            f"{results['model_results']['adj_r2']:.4f}",
+            help=(f"Kararınızın %{results['model_results']['adj_r2']*100:.2f}’si "
+                  "kriter sayısına göre düzeltilmiş açıklama gücüne dayanıyor."))
     
     with col3:
-        st.metric("RMSE", f"{results['model_results']['rmse']:.4f}")
+        st.metric(
+            "RMSE",
+            f"{results['model_results']['rmse']:.2f}",
+            help=(
+                f"Tercihlerinizin puanlamasındaki ortalama tahmin hatası "
+                f"{results['model_results']['rmse']:.2f} puan."))
+    
     
     with col4:
-        st.metric("F İstatistiği", f"{results['model_results']['f_statistic']:.2f}")
+        st.metric(
+            "F İstatistiği",
+            f"{results['model_results']['f_statistic']:.2f}",
+            help=(
+                f"F değeri {results['model_results']['f_statistic']:.2f}, "
+                "modelinizin rastlantısal olmadığını gösteriyor."
+            ))
 
 def main():
     st.title("Kariyer Yolu Öneri Sistemi")
