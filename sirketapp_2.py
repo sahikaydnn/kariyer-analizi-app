@@ -628,12 +628,7 @@ def main():
     
     # Email girişi
     st.markdown("""
-    <div style="background: linear-gradient(
-    135deg,
-    #613cb0 0%,
-    #a87de0 50%,
-    #d7c6f5 100%
-  ); padding: 2rem; border-radius: 15px; color: white; text-align: center; margin: 2rem 0;">
+    <div style="background: linear-gradient(135deg, #613cb0 0%, #a87de0 50%, #d7c6f5 100%); padding: 2rem; border-radius: 15px; color: white; text-align: center; margin: 2rem 0;">
         <h2>📧 E-posta Adresinizi Girin</h2>
         <p>Kariyer analizi sonuçlarınızı görmek için formu doldururken kullandığınız e-posta adresini girin.</p>
     </div>
