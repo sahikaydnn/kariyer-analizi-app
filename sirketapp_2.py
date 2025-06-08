@@ -457,7 +457,7 @@ def display_company_recommendations(company_analysis):
     </style>
 
     <div class="service-sector-alert">
-        <h2>🏢 HİZMET SEKTÖRÜ KARİYERİNİZE BAŞLAMANIZ İÇİN GÜZEL BİR NOKTA!</h2>
+        <h2>HİZMET SEKTÖRÜ KARİYERİNİZE BAŞLAMANIZ İÇİN GÜZEL BİR NOKTA!</h2>
         <p style="font-size: 1.1rem; margin-bottom: 0;">Size özel şirket önerileri hazırlandı.</p>
     </div>
     """, unsafe_allow_html=True)
@@ -619,7 +619,7 @@ def display_results(analysis_results):
     # Service sector check and company recommendations
     if results['is_service_sector'] and results['company_analysis']:
         st.success(
-            "🚀 Önerilen kariyer yolunuz hizmet sektöründe çalışmak. Bu bağlamda aşağıdaki şirketler size uygun olabilir:"
+            "🚀 Önerilen kariyer yolunuz hizmet sektöründe çalışmak. 🏢"
         )
         display_company_recommendations(results['company_analysis'])
         st.markdown("---")
