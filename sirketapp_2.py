@@ -781,7 +781,7 @@ def main():
     st.markdown("""
     <style>
     [data-testid="stExpander"] > details > summary {
-    background-color: #dfd2fa !important;
+    background-color: #613cb0 !important;
     border-radius: 8px;
     color: #152938;}
     [data-testid="stExpander"] > details > summary:hover {
