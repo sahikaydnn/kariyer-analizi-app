@@ -427,9 +427,9 @@ def display_company_recommendations(company_analysis):
     </div>
     """, unsafe_allow_html=True)
     
-st.markdown("""
-<h2 style="color: #152938;">🏆 En Uygun 5 Şirket Önerisi</h2>
-""", unsafe_allow_html=True)
+    st.markdown("""
+    <h2 style="color: #152938;">🏆 En Uygun 5 Şirket Önerisi</h2>
+    """, unsafe_allow_html=True)
 
     
     # Top 5 companies
