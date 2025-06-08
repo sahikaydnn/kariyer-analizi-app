@@ -413,8 +413,17 @@ def display_company_recommendations(company_analysis):
         return
     
     st.markdown("""
+    <style>
+    .service-sector-alert h2 {
+      color: #537F9D !important;
+    }
+    .service-sector-alert p {
+      color: #555555 !important;
+    }
+    </style>
+
     <div class="service-sector-alert">
-        <h2 style="color: #537F9D;">🏢 HİZMET SEKTÖRÜ KARİYERİNİZE BAŞLAMANIZ İÇİN GÜZEL BİR NOKTA!</h2>
+        <h2>🏢 HİZMET SEKTÖRÜ KARİYERİNİZE BAŞLAMANIZ İÇİN GÜZEL BİR NOKTA!</h2>
         <p style="font-size: 1.1rem; margin-bottom: 0;">Size özel şirket önerileri hazırlandı</p>
     </div>
     """, unsafe_allow_html=True)
@@ -492,7 +501,7 @@ def display_company_recommendations(company_analysis):
             x=company_scores,
             y=company_names,
             orientation='h',
-            title="En İyi 5 Şirket Puanları",
+            title="En Uygun 5 Şirket Puanları",
             labels={'x': 'Puan', 'y': 'Şirket'},
             color=company_scores,
             color_continuous_scale='viridis'
