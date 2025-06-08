@@ -641,7 +641,11 @@ def display_results(analysis_results):
         color=career_scores,
         color_continuous_scale='viridis'
     )
-    fig.update_layout(height=600, showlegend=False)
+    fig.update_layout(
+        height=600,
+        showlegend=False,
+        yaxis=dict(autorange='reversed')
+    )
     st.plotly_chart(fig, use_container_width=True)
     
     # Top criteria analysis
