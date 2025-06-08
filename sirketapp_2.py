@@ -52,7 +52,7 @@ st.markdown("""
         padding: 1.5rem;
         border-radius: 15px;
         margin: 1rem 0;
-        color: #fffff;
+        color: #ffffff;
         text-align: center;
         border: 2px solid #613cb0;
     }
@@ -415,10 +415,10 @@ def display_company_recommendations(company_analysis):
     st.markdown("""
     <style>
     .service-sector-alert h2 {
-      color: #fffff !important;
+      color: #ffffff !important;
     }
     .service-sector-alert p {
-      color: #fffff !important;
+      color: #ffffff !important;
     }
     </style>
 
