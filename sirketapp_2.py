@@ -35,7 +35,7 @@ st.markdown("""
         color: white;
     }
     .company-card {
-        background: linear-gradient(135deg, #35688c 0%, #ff6b6b 100%);
+        background: linear-gradient(135deg, #35688c 0%, #20c997 100%);
         padding: 1rem;
         border-radius: 8px;
         margin: 0.5rem 0;
