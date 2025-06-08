@@ -36,7 +36,15 @@ st.markdown("""
       .company-card {
         background: transparent !important;
         border: 1px solid #444 !important;
-        /* Alt metinler dahil tüm metni beyaz yap */
+        color: #ffffff !important;
+      }
+      /* Alt metinleri de kapsayacak şekilde */
+      .service-sector-alert h2,
+      .service-sector-alert p,
+      .career-card h3,
+      .career-card p,
+      .company-card h3,
+      .company-card p {
         color: #ffffff !important;
       }
     /* Metric kutuları koyu arka plan + mor border */
