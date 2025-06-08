@@ -669,7 +669,7 @@ def display_results(analysis_results):
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
-        st.metric("R² Değeri", f" Analizimizin içerdiği kriterler sizin kariyer kararlarınızın %{results['model_results']['r2']:.4f}'ını kapsıyor.")
+        st.metric("R² Değeri", f"{results['model_results']['r2']:.4f}")
     
     with col2:
         st.metric("Adjusted R²", f"{results['model_results']['adj_r2']:.4f}")
