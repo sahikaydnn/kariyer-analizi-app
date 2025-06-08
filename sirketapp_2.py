@@ -621,7 +621,7 @@ def display_results(analysis_results):
         st.info("🏢 Şirket önerileri hazırlanıyor...")
   
     # Career scores visualization
-    st.header("📈 Tüm Kariyer Yolları Karşılaştırması")
+    st.header("Tüm Kariyer Yolları Karşılaştırması")
     
     career_names = [career[0] for career in results['sorted_careers']]
     career_scores = [career[1] for career in results['sorted_careers']]
