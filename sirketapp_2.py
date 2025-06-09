@@ -74,15 +74,13 @@ st.markdown("""
         color: #613cb0;
     }
     .service-sector-alert {
-        background: transparent !important;
-        padding: 1.5rem;
-        border-radius: 15px;
-        margin: 1rem 0;
-        color: #301e58;
-        text-align: center;
+    background: transparent !important;
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin: 1rem 0;
+    text-align: center;
     }
-    .service-sector-alert h2, .service-sector-alert p {
-        color: #301e58; !important;
+
     }
     .career-card {
         background: linear-gradient(135deg, #613cb0 0%, #a87de0 100%);
