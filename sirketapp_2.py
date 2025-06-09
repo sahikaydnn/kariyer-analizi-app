@@ -81,7 +81,7 @@ st.markdown("""
     text-align: center;
     }
 
-    }
+    
     .career-card {
         background: linear-gradient(135deg, #613cb0 0%, #a87de0 100%);
         padding: 1.5rem;
