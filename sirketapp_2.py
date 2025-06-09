@@ -486,19 +486,11 @@ def display_company_recommendations(company_analysis):
     if not company_analysis or not company_analysis['top_5']:
         return
     
+    
     st.markdown("""
-    <style>
-    .service-sector-alert h2 {
-      color: #301e58; !important;
-    }
-    .service-sector-alert p {
-      color: #301e58 !important;
-    }
-    </style>
-
     <div class="service-sector-alert">
-        <h2>HİZMET SEKTÖRÜ KARİYERİNİZE BAŞLAMANIZ İÇİN GÜZEL BİR NOKTA!</h2>
-        <p style="font-size: 1.1rem; margin-bottom: 0;">Size özel şirket önerileri hazırlandı.</p>
+    <h2>HİZMET SEKTÖRÜ KARİYERİNİZE BAŞLAMANIZ İÇİN GÜZEL BİR NOKTA!</h2>
+    <p style="font-size: 1.1rem; margin-bottom: 0;">Size özel şirket önerileri hazırlandı.</p>
     </div>
     """, unsafe_allow_html=True)
     
