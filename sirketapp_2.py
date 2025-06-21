@@ -749,12 +749,12 @@ def main():
     # Email girişi
     st.markdown("""
     <div style="background: linear-gradient(135deg, #613cb0 0%, #a87de0 50%, #764ba2 100%); padding: 2rem; border-radius: 15px; color: white; text-align: center; margin: 2rem 0;">
-        <h2>📧 E-posta Adresinizi Girin</h2>
+        <h2>E-posta Adresinizi Girin</h2>
         <p>Kariyer analizi sonuçlarınızı görmek için formu doldururken kullandığınız e-posta adresini girin.</p>
     </div>
     """, unsafe_allow_html=True)
     
-    email = st.text_input("📧 E-posta Adresiniz:", placeholder="ornek@email.com")
+    email = st.text_input("E-posta Adresiniz:", placeholder="ornek@email.com")
     
     if email and '@' in email:
         if st.button("🔍 Sonuçları Getir", type="primary"):
@@ -790,7 +790,7 @@ def main():
     if not email:
         st.markdown("""
         ---
-        ### 📋 Nasıl Çalışır?
+        ###   Nasıl Çalışır?
         
         1. **📧 E-posta Girin**: Formu doldururken kullandığınız e-posta adresini girin
         2. **🔍 Kontrol**: Sistem Google Sheets'te verilerinizi arar
@@ -798,7 +798,7 @@ def main():
         4. **🎯 Sonuç**: Size en uygun kariyer yolları önerilir
         5. **🏢 Şirket Önerileri**: Hizmet sektörü önerildiyse en iyi şirketler gösterilir
         
-        ### ❓ Sorun Yaşıyor musunuz?
+        ###   Sorun Yaşıyor musunuz?
         - E-posta adresinizi doğru yazdığınızdan emin olun
         - Formu tamamen doldurduğunuzdan emin olun
         - Birkaç dakika bekleyip tekrar deneyin
