@@ -690,14 +690,20 @@ def display_results(analysis_results):
     ]
 
     factor_names = [variable_names_list[idx] for idx, _ in results['top_factors']]
-
-    # Katsayıları da al
+    
+    Tüm katsayıların mutlak değerlerini hesapla (intercept hariç)
+    all_abs_coeffs = [abs(coef) for _, coef in results['top_factors']]
+    total_abs_importance = sum(all_abs_coeffs)
+    # Katsayıları önem yüzdesi ile göster
+    
     for i, (idx, coef) in enumerate(results['top_factors']):
         factor_name = variable_names_list[idx]
         rank_emoji = ["🥇", "🥈", "🥉", "🎯", "🎯"][i]
         direction = "↗" if coef > 0 else "↘"
-        # Katsayı ile birlikte göster
-        st.markdown(f"- {rank_emoji} **{factor_name}**: {coef:.4f} {direction}")
+        # Önem yüzdesini hesapla
+        importance_percent = (abs(coef) / total_abs_importance) * 100
+        # Katsayı ve yön bilgisini paranteze al
+        st.markdown(f"- {rank_emoji} **{factor_name}**: %{importance_percent:.1f} önem ({coef:.3f} {direction})")
         
     # Model statistics
     st.header("📊 Model İstatistikleri")
