@@ -691,12 +691,17 @@ def display_results(analysis_results):
 
     factor_names = [variable_names_list[idx] for idx, _ in results['top_factors']]
 
-    for i, factor_name in enumerate(factor_names):
-        rank_emoji = ["🥇", "🥈", "🥉", "🎯", "🎯"][i]
-        st.markdown(f"- {rank_emoji} **{factor_name}**: {coef:.4f} {direction}")
-    
-    # Model statistics
-    st.header("📊 Model İstatistikleri")
+    # Katsayıları da al
+    for i, (idx, coef) in enumerate(results['top_factors']):
+         factor_name = variable_names_list[idx]
+         rank_emoji = ["🥇", "🥈", "🥉", "🎯", "🎯"][i]
+         direction = "↗" if coef > 0 else "↘"
+         
+         # Katsayı ile birlikte göster
+         st.markdown(f"- {rank_emoji} **{factor_name}**: {coef:.4f} {direction}")
+        
+        # Model statistics
+        st.header("📊 Model İstatistikleri")
     
     col1, col2, col3, col4 = st.columns(4)
     
