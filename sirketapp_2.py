@@ -699,8 +699,8 @@ def display_results(analysis_results):
         # Katsayı ile birlikte göster
         st.markdown(f"- {rank_emoji} **{factor_name}**: {coef:.4f} {direction}")
         
-        # Model statistics
-        st.header("📊 Model İstatistikleri")
+    # Model statistics
+    st.header("📊 Model İstatistikleri")
     
     col1, col2, col3, col4 = st.columns(4)
     
