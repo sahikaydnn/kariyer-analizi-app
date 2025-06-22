@@ -698,12 +698,12 @@ def display_results(analysis_results):
     
     for i, (idx, coef) in enumerate(results['top_factors']):
         factor_name = variable_names_list[idx]
-        rank_emoji = ["🟣", "🟣", "🟣", "🟣", "🟣"][i]
+        rank_emoji = ["🎖️", "🎖️", "🎖️", "🎖️", "🎖️"][i]
         direction = "↗" if coef > 0 else "↘"
         # Önem yüzdesini hesapla
         importance_percent = (abs(coef) / total_abs_importance) * 100
         # Katsayı ve yön bilgisini paranteze al
-        st.markdown(f"{rank_emoji}  **{factor_name}**: %{importance_percent:.1f} ({coef:.3f} {direction})")
+        st.markdown(f"- {rank_emoji}  **{factor_name}**: %{importance_percent:.1f} ({coef:.3f} {direction})")
         
     # Model statistics
     st.header("📊 Model İstatistikleri")
