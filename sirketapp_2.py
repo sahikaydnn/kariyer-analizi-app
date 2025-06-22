@@ -691,7 +691,7 @@ def display_results(analysis_results):
 
 
     
-    Tüm katsayıların mutlak değerlerini hesapla (intercept hariç)
+    #Tüm katsayıların mutlak değerlerini hesapla (intercept hariç)
     all_abs_coeffs = [abs(coef) for _, coef in results['top_factors']]
     total_abs_importance = sum(all_abs_coeffs)
     # Katsayıları önem yüzdesi ile göster
