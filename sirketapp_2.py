@@ -689,7 +689,7 @@ def display_results(analysis_results):
         "Yurtdışı İmkanları", "Maaş", "Şirketin Konumu", "Yükselme Potansiyeli"
     ]
 
-    factor_names = [variable_names_list[idx] for idx, _ in results['top_factors']]
+
     
     Tüm katsayıların mutlak değerlerini hesapla (intercept hariç)
     all_abs_coeffs = [abs(coef) for _, coef in results['top_factors']]
