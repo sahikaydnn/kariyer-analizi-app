@@ -703,7 +703,7 @@ def display_results(analysis_results):
         # Önem yüzdesini hesapla
         importance_percent = (abs(coef) / total_abs_importance) * 100
         # Katsayı ve yön bilgisini paranteze al
-        st.markdown(f"- {rank_emoji} **{factor_name}**: %{importance_percent:.1f} önem ({coef:.3f} {direction})")
+        st.markdown(f"- {rank_emoji} **{factor_name}**: %{importance_percent:.1f} ({coef:.3f} {direction})")
         
     # Model statistics
     st.header("📊 Model İstatistikleri")
