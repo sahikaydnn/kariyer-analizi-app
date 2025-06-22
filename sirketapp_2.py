@@ -698,7 +698,7 @@ def display_results(analysis_results):
     
     for i, (idx, coef) in enumerate(results['top_factors']):
         factor_name = variable_names_list[idx]
-        rank_emoji = ["▪", "▪", "▪", "▪", "▪"][i]
+        rank_emoji = ["1.", "2.", "3.", "4.", "5."][i]
         direction = "↗" if coef > 0 else "↘"
         # Önem yüzdesini hesapla
         importance_percent = (abs(coef) / total_abs_importance) * 100
