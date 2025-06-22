@@ -681,7 +681,7 @@ def display_results(analysis_results):
     st.plotly_chart(fig, use_container_width=True)
     
     # Top criteria analysis
-    st.header("🎯 En Önemli Kriterler")
+    st.header("Kararı En Çok Etkileyen Kriterler")
 
     variable_names_list = [
         "Stres Düzeyi", "Kendini Geliştirme", "Şirket Kültürü",
