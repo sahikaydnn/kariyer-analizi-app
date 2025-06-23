@@ -529,9 +529,7 @@ def display_company_recommendations(company_analysis):
                     <p><strong>📊 Puan:</strong> {company['score']:.2f}</p>
                     <p><strong>🎯 Pişmanlık:</strong> %{regret:.1f}</p>
                 </div>
-                <div style="text-align: right;">
-                    <p style="renk: {status_color}; font-weight: bold;">{status_text}</p>
-                </div>
+
             </div>
         </div>
         """, unsafe_allow_html=True)
