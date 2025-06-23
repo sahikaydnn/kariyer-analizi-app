@@ -203,7 +203,14 @@ class CareerAnalysisApp:
             ["Yapı Kredi", [0,1,0,1,0,1,0,1,1,0]],
             ["Anadolu Efes", [1,0,1,0,1,1,1,0,0,1]],
             ["Coca Cola", [0,1,0,1,1,1,1,1,1,1]],
-            ["Trendyol", [0,1,1,1,1,0,0,1,1,1]]
+            ["Trendyol", [0,1,1,1,1,0,0,1,1,1]],
+            ["İş Bankası", [1,1,0,1,0,1,0,1,1,0]],
+            ["Mercedes Benz", [0,1,1,1,1,0,0,1,1,1]],
+            ["Toyota", [0,1,1,1,1,1,0,1,1,0]],
+            ["Nestle", [0,1,1,1,1,1,1,1,1,1]],
+            ["FLO", [1,0,0,0,0,0,1,0,0,1]],
+            ["Yapı Kredi Teknoloji", [0,1,1,1,0,0,0,1,0,0]]
+            
         ]
     
     def duplicate_data(self, data):
@@ -535,7 +542,7 @@ def display_company_recommendations(company_analysis):
     
     with col1:
         st.metric(
-            "🎯 İdeal Şirket Puanı", 
+            "🎯 İdeal Kariyer Yolu Puanı", 
             f"{company_analysis['ideal_score']:.2f}",
             help="Size en uygun olacak teorik şirket puanı"
         )
