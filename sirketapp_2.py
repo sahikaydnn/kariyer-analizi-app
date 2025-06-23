@@ -210,7 +210,6 @@ class CareerAnalysisApp:
             ["Nestle", [0,1,1,1,1,1,1,1,1,1]],
             ["FLO", [1,0,0,0,0,0,1,0,0,1]],
             ["Yapı Kredi Teknoloji", [0,1,1,1,0,0,0,1,0,0]]
-            
         ]
     
     def duplicate_data(self, data):
