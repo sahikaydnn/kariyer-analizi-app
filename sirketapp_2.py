@@ -530,7 +530,6 @@ def display_company_recommendations(company_analysis):
                     <p><strong>🎯 Pişmanlık:</strong> %{regret:.1f}</p>
                 </div>
 
-            </div>
         </div>
         """, unsafe_allow_html=True)
     
